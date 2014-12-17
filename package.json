@@ -1,0 +1,19 @@
+{
+  "name": "xpl-domogeek",
+  "version": "0.1.0",
+  "description": "Node JS layer to receive domogeek response through xPL",
+  "main": "./lib/xpl-domogeek.js",
+  "dependencies": {
+    "xpl-api": "~1.0.12",
+    "fs": "~0.0.2",
+    "http": "0.0.0"
+  },
+  "keywords": [
+    "XPL","nodejs","domogeek"
+  ],
+  "repository": { "type": "git", "url": "https://github.com/wiseflat/xpl-domogeek.git" },
+  "author": "Mathieu Garcia",
+  "license": "GPL",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/wiseflat/xpl-domogeek"
+}
