@@ -12,7 +12,11 @@ wt._init(function(error, xpl) {
 	}
         
         wt.getLocalConfig();
-                
+
+        setInterval(function(){
+                wt.sendCommands();
+        }, 30 * 1000);  
+        
         /*xpl.on("xpl:domogeek.config", function(evt) {
 		console.log("Receive message domogeek.config ", evt);
                 if(evt.headerName == 'xpl-cmnd' && wt.validConfigSchema(evt.body)) wt.writeConfig(evt.body);
