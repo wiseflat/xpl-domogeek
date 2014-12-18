@@ -14,12 +14,12 @@ wt._init(function(error, xpl) {
         wt.readConfig();
                 
         xpl.on("xpl:domogeek.config", function(evt) {
-		console.log("Receive message domogeek.config ", evt);
+		//console.log("Receive message domogeek.config ", evt);
                 if(evt.headerName == 'xpl-cmnd' && wt.validConfigSchema(evt.body)) wt.writeConfig(evt.body);
         }); 
 
         xpl.on("xpl:domogeek.request", function(evt) {
-		console.log("Receive message domogeek.request ", evt);
+		//console.log("Receive message domogeek.request ", evt);
                 if(evt.headerName == 'xpl-cmnd') wt.readConfig();
         });
         
