@@ -12,6 +12,8 @@ This module stores localy specifics url and it asks the online API every hour
 
 ## Usage
 
+You need to install the xPL_Hub first : https://github.com/Tieske/xPL4Linux
+
 Send xpl-cmnd to get the configuration of the module
 
     $ xpl-send -m cmnd -c domogeek.request
