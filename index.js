@@ -4,7 +4,7 @@ var wt = new xpldomogeek(null, {
 	//xplSource: 'bnz-ipx800.wiseflat'
 });
 
-wt._init(function(error, xpl) {
+wt._init(function(error, xpl) { 
 
 	if (error) {
 		console.error(error);
