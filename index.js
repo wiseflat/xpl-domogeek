@@ -11,7 +11,7 @@ wt._init(function(error, xpl) {
 		return;
 	}
         
-        wt.getLocalConfig();
+        wt.readConfig();
                 
         xpl.on("xpl:domogeek.config", function(evt) {
 		console.log("Receive message domogeek.config ", evt);
