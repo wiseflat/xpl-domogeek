@@ -23,8 +23,8 @@ wt._init(function(error, xpl) {
                 if(evt.headerName == 'xpl-cmnd') wt.readConfig();
         });
         
-        /*setInterval(function(){
+        setInterval(function(){
                 wt.sendCommands();
-        }, 30 * 1000);  */
+        }, 30 * 1000);
 });
 
