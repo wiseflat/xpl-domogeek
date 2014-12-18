@@ -18,6 +18,7 @@ Send xpl-cmnd to get the configuration of the module
 
     $ xpl-send -m cmnd -c domogeek.request
 
-Send xpl-cmnd to add/update a configuration to the module
+Send xpl-cmnd to add/update a configuration
 
     $ xpl-send -m cmnd -c domogeek.config type=schoolholiday url="http://api.domogeek.fr/schoolholiday/A/now/json" enable=true
+    $ xpl-send -m cmnd -c domogeek.config type=schoolholiday url="http://api.domogeek.fr/schoolholiday/B/now/json" enable=false
