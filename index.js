@@ -18,20 +18,20 @@ wt.init(function(error, xpl) {
         // Send every minutes an xPL status message 
         setInterval(function(){
                 wt.sendConfig();
+                wt.sendBasic();
         }, 60 * 1000);
 
-        setInterval(function(){
+        /*setInterval(function(){
                 wt.sendBasic();
-        }, 3600 * 1000);
+        }, 3600 * 1000);*/
         
         xpl.on("xpl:domogeek.request", function(evt) {
                 if(evt.headerName == 'xpl-cmnd') wt.sendConfig();
         });
         
-        /*xpl.on("xpl:domogeek.config", function(evt) {
-		//console.log("Receive message domogeek.config ", evt);
+        xpl.on("xpl:domogeek.config", function(evt) {
                 if(evt.headerName == 'xpl-cmnd' && wt.validConfigSchema(evt.body)) wt.writeConfig(evt.body);
-        }); */
+        });
     
 });
 
