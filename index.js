@@ -19,7 +19,7 @@ wt.init(function(error, xpl) {
         setInterval(function(){
                 wt.sendConfig();
                 wt.sendBasic();
-        }, 60 * 1000);
+        }, 30 * 1000);
 
         /*setInterval(function(){
                 wt.sendBasic();
