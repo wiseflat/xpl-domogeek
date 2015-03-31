@@ -4,7 +4,7 @@
   "description": "Node JS layer to receive domogeek response through xPL",
   "main": "./lib/xpl-domogeek.js",
   "dependencies": {
-    "xpl-api": "~1.0.12",
+    "xpl-api": "Nodejs-XPL/xpl-api",
     "fs": "~0.0.2",
     "http": "0.0.0"
   },
