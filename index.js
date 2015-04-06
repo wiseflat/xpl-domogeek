@@ -1,4 +1,6 @@
 var xpldomogeek = require("./lib/xpl-domogeek");
+var schema_domogeekbasic = require('/etc/wiseflat/schemas/domogeek.basic.json');
+var schema_domogeekconfig = require('/etc/wiseflat/schemas/domogeek.config.json');
 
 var wt = new xpldomogeek(null, {
 	xplLog: false,
@@ -12,6 +14,9 @@ wt.init(function(error, xpl) {
 		return;
 	}
         
+	xpl.addBodySchema(schema_domogeekbasic.id, schema_domogeekbasic.definitions.body);
+	xpl.addBodySchema(schema_domogeekconfig.id, schema_domogeekconfig.definitions.body);
+	
         // Load config file into hash
         wt.readConfig();
         wt.readBasic();
@@ -27,7 +32,7 @@ wt.init(function(error, xpl) {
         });
         
         xpl.on("xpl:domogeek.config", function(evt) {
-                if(evt.headerName == 'xpl-cmnd' && wt.validConfigSchema(evt.body)) wt.writeConfig(evt.body);
+                if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt.body);
         });
     
 });
