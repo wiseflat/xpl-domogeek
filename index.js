@@ -27,10 +27,9 @@ wt.init(function(error, xpl) {
         }, 30 * 1000);
         
 	// Send every minutes an xPL status message 
-        setTimeout(function(){
-		console.log('typeof wt.configHash.interval :', typeof wt.configHash.interval);
-		if (wt.configHash.enable === true && wt.configHash.interval === 'number' ) wt.sendBasic();
-        }, wt.configHash.interval * 1000);
+        setInterval(function(){
+		if (wt.configHash.enable === true ) wt.sendBasic();
+        }, 180 * 1000);
 	
         xpl.on("xpl:domogeek.config", function(evt) {
                 if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt.header.target, evt.body);
