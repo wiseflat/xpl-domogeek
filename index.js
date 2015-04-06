@@ -4,7 +4,7 @@ var schema_domogeekconfig = require('/etc/wiseflat/schemas/domogeek.config.json'
 
 var wt = new xpldomogeek(null, {
 	xplLog: false,
-	forceBodySchemaValidation: false
+	forceBodySchemaValidation: false,
 });
 
 wt.init(function(error, xpl) { 
@@ -33,7 +33,7 @@ wt.init(function(error, xpl) {
         }, wt.configHash.interval * 1000);
 	
         xpl.on("xpl:domogeek.config", function(evt) {
-                if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt.body);
+                if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt.header.target, evt.body);
         });
     
 });
