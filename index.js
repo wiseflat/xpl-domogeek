@@ -1,7 +1,8 @@
 var xpldomogeek = require("./lib/xpl-domogeek");
 
 var wt = new xpldomogeek(null, {
-	//xplSource: 'bnz-ipx800.wiseflat'
+	xplLog: false,
+	forceBodySchemaValidation: false
 });
 
 wt.init(function(error, xpl) { 
@@ -20,10 +21,6 @@ wt.init(function(error, xpl) {
                 wt.sendConfig();
                 wt.sendBasic();
         }, 30 * 1000);
-
-        /*setInterval(function(){
-                wt.sendBasic();
-        }, 3600 * 1000);*/
         
         xpl.on("xpl:domogeek.request", function(evt) {
                 if(evt.headerName == 'xpl-cmnd') wt.sendConfig();
