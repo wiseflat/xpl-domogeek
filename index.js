@@ -27,7 +27,7 @@ wt.init(function(error, xpl) {
         }, 30 * 1000);
         
 	// Send every minutes an xPL status message 
-        setInterval(function(){
+        setTimeout(function(){
 		console.log('typeof wt.configHash.interval :', typeof wt.configHash.interval);
 		if (wt.configHash.enable === true && wt.configHash.interval === 'number' ) wt.sendBasic();
         }, wt.configHash.interval * 1000);
