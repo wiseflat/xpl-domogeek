@@ -26,11 +26,7 @@ wt.init(function(error, xpl) {
                 wt.sendConfig();
                 wt.sendBasic();
         }, 30 * 1000);
-        
-        xpl.on("xpl:domogeek.request", function(evt) {
-                if(evt.headerName == 'xpl-cmnd') wt.sendConfig();
-        });
-        
+                
         xpl.on("xpl:domogeek.config", function(evt) {
                 if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt.body);
         });
