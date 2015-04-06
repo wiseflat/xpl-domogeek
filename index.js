@@ -24,9 +24,13 @@ wt.init(function(error, xpl) {
         // Send every minutes an xPL status message 
         setInterval(function(){
                 wt.sendConfig();
-                wt.sendBasic();
         }, 30 * 1000);
-                
+        
+	// Send every minutes an xPL status message 
+        setInterval(function(){
+                wt.sendBasic();
+        }, wt.configHash.interval);
+	
         xpl.on("xpl:domogeek.config", function(evt) {
                 if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt.body);
         });
