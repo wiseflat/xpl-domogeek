@@ -32,8 +32,7 @@ wt.init(function(error, xpl) {
         }, 1800 * 1000);
 	
         xpl.on("xpl:domogeek.config", function(evt) {
-                //if(wt.readTarget(evt.header.target) && evt.headerName == 'xpl-cmnd') wt.writeConfig(evt);
-		if(evt.headerName == 'xpl-cmnd') wt.writeConfig(evt);
+                if(wt.readTarget(evt.header.target) && evt.headerName == 'xpl-cmnd') wt.writeConfig(evt);
         });
     
 });
