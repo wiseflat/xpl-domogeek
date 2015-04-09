@@ -1,6 +1,6 @@
 {
   "name": "xpl-domogeek",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node JS layer to receive domogeek response through xPL",
   "main": "./lib/xpl-domogeek.js",
   "dependencies": {
