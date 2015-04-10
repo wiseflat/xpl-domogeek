@@ -5,7 +5,7 @@ After=xpl-hub.service
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/node /opt/xpl-domogeek/index.js
+ExecStart=node /opt/xpl-domogeek/index.js
 Restart=always
 
 [Install]
